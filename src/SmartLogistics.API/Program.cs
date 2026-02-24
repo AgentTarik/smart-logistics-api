@@ -1,4 +1,6 @@
 using Serilog;
+using Microsoft.EntityFrameworkCore;
+using SmartLogistics.Infrastructure.Data;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -15,6 +17,11 @@ try
 
     // Add services
     builder.Services.AddControllers();
+    builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        x => x.UseNetTopologySuite()
+    ));
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 

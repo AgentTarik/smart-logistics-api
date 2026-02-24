@@ -17,7 +17,18 @@
       "Bash(curl:*)",
       "Bash(tail:*)",
       "Bash(pkill:*)",
-      "Bash(netstat:*)"
+      "Bash(netstat:*)",
+      "Bash(dotnet ef:*)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet add src/SmartLogistics.API package Microsoft.EntityFrameworkCore.Design 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet add src/SmartLogistics.API package Microsoft.EntityFrameworkCore.Design --version 9.0.1 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker-compose down -v 2>&1 && docker-compose up -d 2>&1)",
+      "Bash(docker exec:*)",
+      "Bash(sc query type= service state= all | grep -i postgres 2>&1)",
+      "Bash(net stop:*)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet run --project src/SmartLogistics.API 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U postgres -d smartlogistics -c \"SELECT * FROM \\\\\"__EFMigrationsHistory\\\\\";\" 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U smartlogistics -d smartlogistics -c \"SELECT * FROM \\\\\"__EFMigrationsHistory\\\\\";\" 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U smartlogistics -d smartlogistics -c \"\\\\dt\" 2>&1)"
     ]
   }
 }
