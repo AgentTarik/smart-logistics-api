@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet build 2>&1)",
+      "Bash(docker --version 2>&1 && docker info --format '{{.ServerVersion}}' 2>&1)",
+      "Bash(\"/c/Program Files/Docker/Docker/resources/bin/docker\" --version 2>&1 || cmd.exe //c \"docker --version\" 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet remove src/SmartLogistics.API package Swashbuckle.AspNetCore && dotnet add src/SmartLogistics.API package Swashbuckle.AspNetCore --version 6.9.0 2>&1)",
+      "Bash(winget install:*)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.EntityFrameworkCore.Tools && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Dapper && \\\\\ndotnet add src/SmartLogistics.Infrastructure package StackExchange.Redis && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Confluent.Kafka && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.Extensions.Http.Polly && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Polly && \\\\\ndotnet add src/SmartLogistics.API package Microsoft.AspNetCore.Authentication.JwtBearer 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL --version 9.0.4 && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite --version 9.0.4 && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.EntityFrameworkCore.Tools --version 9.0.3 && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Dapper && \\\\\ndotnet add src/SmartLogistics.Infrastructure package StackExchange.Redis && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Confluent.Kafka && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.Extensions.Http.Polly && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Polly 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && \\\\\ndotnet add src/SmartLogistics.API package Microsoft.AspNetCore.Authentication.JwtBearer --version 9.0.3 2>&1)",
+      "Bash(taskkill:*)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && \\\\\ndotnet remove src/SmartLogistics.Infrastructure package Microsoft.EntityFrameworkCore.Tools && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.EntityFrameworkCore.Tools --version 9.0.1 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && \\\\\ndotnet remove src/SmartLogistics.Infrastructure package Microsoft.Extensions.Http.Polly && \\\\\ndotnet add src/SmartLogistics.Infrastructure package Microsoft.Extensions.Http.Polly --version 9.0.3 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker-compose up -d 2>&1)",
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker-compose ps 2>&1)",
+      "Bash(curl:*)",
+      "Bash(tail:*)",
+      "Bash(pkill:*)",
+      "Bash(netstat:*)"
+    ]
+  }
+}
