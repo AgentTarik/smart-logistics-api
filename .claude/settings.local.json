@@ -28,7 +28,8 @@
       "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && dotnet run --project src/SmartLogistics.API 2>&1)",
       "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U postgres -d smartlogistics -c \"SELECT * FROM \\\\\"__EFMigrationsHistory\\\\\";\" 2>&1)",
       "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U smartlogistics -d smartlogistics -c \"SELECT * FROM \\\\\"__EFMigrationsHistory\\\\\";\" 2>&1)",
-      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U smartlogistics -d smartlogistics -c \"\\\\dt\" 2>&1)"
+      "Bash(cd /c/Users/bruno/Documents/Projects/SmartLogistics && docker compose exec postgres psql -U smartlogistics -d smartlogistics -c \"\\\\dt\" 2>&1)",
+      "Bash(dotnet build:*)"
     ]
   }
 }

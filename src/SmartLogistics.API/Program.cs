@@ -1,6 +1,14 @@
-using Serilog;
+using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+using SmartLogistics.API.Middleware;
+using SmartLogistics.Application.Behaviors;
+using SmartLogistics.Application.Features.Drivers.Commands;
+using SmartLogistics.Application.Validators;
+using SmartLogistics.Domain.Interfaces;
 using SmartLogistics.Infrastructure.Data;
+using SmartLogistics.Infrastructure.Repositories;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -25,9 +33,21 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
+    // MediatR
+    builder.Services.AddMediatR(cfg =>
+        cfg.RegisterServicesFromAssembly(typeof(CreateDriverCommand).Assembly));
+
+    // FluentValidation
+    builder.Services.AddValidatorsFromAssembly(typeof(CreateDriverValidator).Assembly);
+    builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
+    // Repositories
+    builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
     var app = builder.Build();
 
     // Middleware pipeline
+    app.UseMiddleware<ExceptionMiddleware>();
     app.UseSerilogRequestLogging();
 
     if (app.Environment.IsDevelopment())
